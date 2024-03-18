@@ -82,7 +82,6 @@ h2 {
     color: #1d6154;
 }
 
-
 .section-login form {
     text-align: left;
     margin-top: 30px;
@@ -107,10 +106,8 @@ h2 {
 
 .section-login label {
     margin: 2em 20em 1em 0em;
-
-
+    
 }
-
 
 input[type="submit"] {
     font-family: 'Syne';
@@ -125,9 +122,14 @@ input[type="submit"] {
 }
 
 .footer {
+    background-color: white;
+    width: 2440px;
+    height: 360px;
+}
+
+footer nav ul {
     display: flex;
-    flex-direction: row-reverse;
-    padding-top: 10px;
-    padding-right: 50px;
-    font-size: 1em;
+    justify-content: flex-end;
+    margin: 32px;
+    padding-top: 20px;
 }

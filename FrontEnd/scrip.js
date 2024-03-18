@@ -1,3 +1,4 @@
+
 /*Variable*/
 const gallery = document.querySelector(".gallery");
 const body = document.querySelector("body");
@@ -18,6 +19,7 @@ async function main() {
   displayWorksGallery();
 }
 main();
+
 
 /*affichage des works dans le dom */
 function displayWorksGallery() {
@@ -41,4 +43,5 @@ function createWork(work) {
   figure.appendChild(img);
   figure.appendChild(figcaption);
   gallery.appendChild(figure);
+  
 }
