@@ -1,10 +1,4 @@
 
-.main-login {
-    min-height: 650px;
-    margin-top: 90px;
-
-}
-
 .section-login {
     display: flex;
     flex-direction: column;
@@ -47,7 +41,7 @@ h2 {
 
 .section-login label {
     margin: 2em 20em 1em 0em;
-    
+
 }
 
 input[type="submit"] {

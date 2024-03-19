@@ -1,10 +1,8 @@
-
 /******Variable*******/
 
 const gallery = document.querySelector(".gallery");
 const body = document.querySelector("body");
 const containerFiltres = document.querySelector(".container-filters");
-
 
 /******fonction qui retourne le tableau des works*******/
 
@@ -19,13 +17,15 @@ async function getCategory() {
   return requete.json();
 }
 async function main() {
-    displayWorksGallery();
-    createAllButtons();
+  displayWorksGallery();
+  createAllButtons();
+  displayByCategory();
 }
 main();
 
 
 /*affichage des works dans le dom */
+
 function displayWorksGallery() {
   gallery.innerHTML = "";
   getWorks().then((data) => {
@@ -47,7 +47,6 @@ function createWork(work) {
   figure.appendChild(img);
   figure.appendChild(figcaption);
   gallery.appendChild(figure);
-  
 }
 
 
@@ -57,9 +56,10 @@ function createWork(work) {
 
 async function getCategorys() {
   const response = await fetch("http://localhost:5678/api/categories");
-  return await response.json()
+  return await response.json();
 }
 getCategorys();
+
 
 //creation des boutons
 
@@ -79,4 +79,33 @@ function createButton(category) {
   containerFiltres.appendChild(btn);
   //console.log(category.id);
   //console.log(category.name);
+}
+
+
+// Trie par classe sur les boutons filtres
+
+async function displayByCategory() {
+  const works = await getWorks();
+  const buttons = document.querySelectorAll(".container-filters");
+  buttons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      buttons.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+      button.classList.add("active");
+      const btnId = e.target.id;
+      gallery.innerHTML = "";
+      works.forEach((work) => {
+        if (btnId == work.categoryId) {
+          createWork(work);
+
+        }
+        if (btnId == "0") {
+          createWork(work);
+
+        }
+      });
+    });
+  });
+
 }
