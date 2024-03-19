@@ -13,7 +13,6 @@
       href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/styleLogin.css" />
     <link rel="stylesheet" href="./assets/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
@@ -23,28 +22,24 @@
       <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
       <nav>
         <ul>
-          <li><a href="index.html">projets</a></li>
-          <li><a href="mailto:Sophie.Bluel@gmail.com">contact</a></li>
-          <li>login</li>
-          <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
-        </ul>
+        <li>projets</li>
+        <li><a href="mailto:Sophie.Bluel@gmail.com">contact</a></li>
+        <li><a href="login.html" id="login-link">login</a></li>
+        <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
+      </ul>
       </nav>
     </header>
     <main class="main-login">
-      <section class="section-login">
-        <h2>Log in</h2>
-        <form action="#" method="post"></form>
+       <section id="contact">
+      <h2>Log in</h2>
+      <form action="#" method="post">
         <label for="email">E-mail</label>
-        <input class="input-log" type="email" name="email" id="email" />
+        <input type="email" name="email" id="email">
         <label for="password">Mot de passe</label>
-        <input
-          class="input-log"
-          type="password"
-          name="password"
-          id="password"
-        />
-        <input class="button-login" type="submit" value="Se connecter" />
-      </section>
+        <input type="password" name="password" id="password">
+        <input type="submit" value="Se connecter">
+      </form>
+    </section>
     </main>
   </body>
   <footer>
