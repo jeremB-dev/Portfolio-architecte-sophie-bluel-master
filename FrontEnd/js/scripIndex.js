@@ -3,9 +3,13 @@
 const gallery = document.querySelector(".gallery");
 const body = document.querySelector("body");
 const containerFiltres = document.querySelector(".container-filters");
+/**variables connexion**/
+const token = window.sessionStorage.getItem("token");
+const user = window.sessionStorage.getItem("userId");
+const logOut = document.getElementById("login-link");
+
 
 /******fonction qui retourne le tableau des works*******/
-
 async function getWorks() {
   const requete = await fetch("http://localhost:5678/api/works");
   return await requete.json();
@@ -25,7 +29,6 @@ main();
 
 
 /*affichage des works dans le dom */
-
 function displayWorksGallery() {
   gallery.innerHTML = "";
   getWorks().then((data) => {
@@ -53,13 +56,11 @@ function createWork(work) {
 //**********afiichage des boutons par catégories**************/
 
 //récuperer le tableau des catégories
-
 async function getCategorys() {
   const response = await fetch("http://localhost:5678/api/categories");
   return await response.json();
 }
 getCategorys();
-
 
 //creation des boutons
 
@@ -83,10 +84,10 @@ function createButton(category) {
 
 
 // Trie par classe sur les boutons filtres
-
 async function displayByCategory() {
   const works = await getWorks();
-  const buttons = document.querySelectorAll(".container-filters");
+  const buttons = document.querySelectorAll(".container-filters"); //probleme selecteur (pas tous les boutons)
+
   buttons.forEach((button) => {
     button.addEventListener("click", (e) => {
       buttons.forEach((btn) => {
@@ -94,18 +95,16 @@ async function displayByCategory() {
       });
       button.classList.add("active");
       const btnId = e.target.id;
+ 
       gallery.innerHTML = "";
       works.forEach((work) => {
         if (btnId == work.categoryId) {
           createWork(work);
-
         }
         if (btnId == "0") {
           createWork(work);
-
         }
       });
     });
   });
-
 }

@@ -138,6 +138,7 @@ section {
 	font-size: 30px;
 	color: #1d6154;
 }
+
 #introduction {
 	display: flex;
 	align-items: center;
@@ -245,6 +246,12 @@ section {
 	box-shadow: 4px 4px 14px 4px #00000017;
 }
 
+.p-wrong {
+	color: red;
+	font: inherit;
+	padding-top: 20px;
+}
+
 input[type="submit"] {
 	font-family: "Syne";
 	font-weight: 700;
@@ -257,15 +264,15 @@ input[type="submit"] {
 }
 
 footer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: #ffffff;
-  width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	background-color: #ffffff;
+	width: 100%;
 }
 
 footer nav ul {
-  display: flex;
-  justify-content: flex-end;
-  margin: 2em;
+	display: flex;
+	justify-content: flex-end;
+	margin: 2em;
 }
