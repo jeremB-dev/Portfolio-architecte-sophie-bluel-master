@@ -78,6 +78,7 @@ body {
 }
 
 /** end reset css**/
+/*********header**********/
 header {
 	display: flex;
 	justify-content: space-between;
@@ -120,6 +121,10 @@ header nav ul li a {
 	color: black;
 }
 
+.current-page {
+	font-weight: bold;
+}
+
 header nav ul li a:hover {
 	color: #b1663c;
 }
@@ -128,6 +133,24 @@ header nav ul li:hover {
 	color: #b1663c;
 }
 
+/**********bandeau mode edition**********/
+.admin-edit {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+	height: 59px;
+	width: 1440px;
+}
+
+.admin-edit p {
+	color: white;
+}
+
+
+/****************************************/
+
+/**********introduction**********/
 section {
 	margin: 150px 0;
 }
@@ -165,6 +188,8 @@ section {
 #introduction p {
 	margin-bottom: 8px;
 }
+
+/**********portfolio**********/
 
 /*Préparation des filtres*/
 #portfolio h2 {
@@ -210,6 +235,21 @@ section {
 	width: 100%;
 }
 
+.div-edit {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 5em;
+	gap: 10px;
+}
+
+.div-edit span {
+	cursor: pointer;
+}
+
+
+/**********formulaire contact**********/
+
 #contact {
 	width: 50%;
 	margin: auto;
@@ -235,6 +275,7 @@ section {
 	font-size: 19px;
 	border: none;
 	box-shadow: 4px 4px 14px 4px #00000017;
+	cursor: pointer;
 }
 
 #contact label {
@@ -263,6 +304,8 @@ input[type="submit"] {
 	border-radius: 60px;
 }
 
+/**********footer**********/
+
 footer {
 	display: flex;
 	justify-content: flex-end;
@@ -275,4 +318,18 @@ footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em;
+}
+
+/********modale********/
+.modal-containeur {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	width: 630px;
+	height: 688px;
+	border-radius: 10px;
+	top: 660px;
+	left: 405px;
+	background-color: red;
 }
