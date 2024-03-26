@@ -10,11 +10,13 @@ const logOut = document.getElementById("login-link");
 const sectionPortfolio = document.querySelector("#portfolio");
 const sectionPortfolioH2 = document.querySelector("#portfolio h2");
 const editionText = "Mode édition";
+const editionTextProject = "modifier"
 const editionLogo = `<i class="fa-regular fa-pen-to-square"></i>`;
 const adminConnexionUP = `<div class="admin-edit"><p>${editionLogo} ${editionText}</p></div>`;
 const divEdit = document.createElement("div");
 const spanEdit = document.createElement("span");
 const adminConnexionDown = `${editionLogo}  ${editionText} `;
+const adminConnexionProject = `${editionLogo}  ${editionTextProject} `;
 
 
 /******fonction qui retourne le tableau des works*******/
@@ -141,6 +143,8 @@ function loginUser() {
     divEdit.appendChild(sectionPortfolioH2);
     divEdit.appendChild(spanEdit);
     sectionPortfolio.prepend(divEdit);
+    document.getElementById("portfolio",)
+    document.body.insertAdjacentHTML("beforeend", adminConnexionProject); //ajout du bouton modifier ( X bas de la page)
     containerFiltres.style = "display:none";
   } else {
     //console.log("L'utilisateur n'est pas connecté");
