@@ -5,7 +5,6 @@ const form = document.querySelector("form");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const logOut = document.getElementById("login-link");
-
 /***recupération email et password***/
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -28,7 +27,7 @@ form.addEventListener("submit", (e) => {
     /**recupération réponse**/
     .then((response) => {
       if (!response.ok) {
-        email.style.border = "2px solid #FF0000";
+        email.style.border = "2px solid #FF0000"; /***changer avec une class directement */
         password.style.border = "2px solid #FF0000";
         const wrongLogin = document.querySelector(".p-wrong");
         wrongLogin.textContent =
@@ -40,10 +39,8 @@ form.addEventListener("submit", (e) => {
       return response.json();
     })
     .then((data) => {
-      const userId = data.userId;
       const userToken = data.token;
       window.sessionStorage.setItem("token", userToken);
-      window.sessionStorage.setItem("userId", userId);
       window.location.href = "index.html";
     })
     .catch((error) => {

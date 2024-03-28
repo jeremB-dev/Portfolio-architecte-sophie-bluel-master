@@ -5,17 +5,14 @@ const body = document.querySelector("body");
 const containerFiltres = document.querySelector(".container-filters");
 /**variables connexion**/
 const token = window.sessionStorage.getItem("token");
-const user = window.sessionStorage.getItem("userId");
 const logOut = document.getElementById("login-link");
 const sectionPortfolio = document.querySelector("#portfolio");
 const sectionPortfolioH2 = document.querySelector("#portfolio h2");
-const editionText = "Mode édition";
 const editionTextProject = "modifier"
 const editionLogo = `<i class="fa-regular fa-pen-to-square"></i>`;
-const adminConnexionUP = `<div class="admin-edit"><p>${editionLogo} ${editionText}</p></div>`;
+const adminEdit = document.querySelector("admin-edit");
 const divEdit = document.createElement("div");
 const spanEdit = document.createElement("span");
-const adminConnexionDown = `${editionLogo}  ${editionText} `;
 const adminConnexionProject = `${editionLogo}  ${editionTextProject} `;
 
 
@@ -31,6 +28,8 @@ async function getCategory() {
   const requete = await fetch("http://localhost:5678/api/categories");
   return requete.json();
 }
+getCategory();
+
 async function main() {
   displayWorksGallery();
   createAllButtons();
@@ -135,18 +134,17 @@ async function displayByCategory() {
 /*****Page utilisateur conecté*****/
 
 function loginUser() {
-  if (user) {
+  if (token) {
     logOut.textContent = "logout";
-    document.body.insertAdjacentHTML("afterbegin", adminConnexionUP);
-    spanEdit.innerHTML = adminConnexionDown;
+    spanEdit.innerHTML = adminConnexionProject;
     divEdit.classList.add("div-edit");
     divEdit.appendChild(sectionPortfolioH2);
     divEdit.appendChild(spanEdit);
     sectionPortfolio.prepend(divEdit);
     document.getElementById("portfolio",)
-    document.body.insertAdjacentHTML("beforeend", adminConnexionProject); //ajout du bouton modifier ( X bas de la page)
     containerFiltres.style = "display:none";
   } else {
+    
     //console.log("L'utilisateur n'est pas connecté");
   }
 }
@@ -156,11 +154,12 @@ function loginUser() {
 
 function logoutUser() {
   logOut.addEventListener("click", () => {
-    if (user) {
+    if (token) {
       window.sessionStorage.setItem("token", "");
       logOut.textContent = "login";
       window.sessionStorage.setItem("userId", "");
       window.location.href = "index.html";
+      adminEdit.style = "display:none";
     }
   });
 }
