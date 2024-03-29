@@ -30,15 +30,24 @@ containerModal.addEventListener("click", function (e) {
 sectionPortfolio.appendChild(containerModal);
 
 //récupération des works & appel de la fonction de création de works dans la gallery
-
-function displayModal() {
-  modalGallery.innerHTML = "";
-  getWorks().then((data) => {
-    //cree pour chaque élément du tableau
-    // console.log(data);
-    data.forEach((work) => {
-      createWork(work);
-    });
+async function displayGallery () {
+  modalGallery.innerHTML = ""
+  const gallery = await getWorks()
+  console.log(gallery);
+  gallery.forEach(works => {
+    const figure = document.createElement("figure")
+    const img = document.createElement("img")
+    const span = document.createElement("span")
+    const trash = document.createElement("i")
+    trash.classList.add("fa-solid", "fa-trash-can")
+    trash.id = works.id
+    img.src = works.imageUrl
+    img.alt = works.title
+    span.appendChild(trash)
+    figure.appendChild(img)
+    figure.appendChild(span)
+    modalGallery.appendChild(figure)
   });
 }
+displayGallery()
 
