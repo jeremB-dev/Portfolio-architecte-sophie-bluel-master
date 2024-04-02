@@ -10,6 +10,7 @@
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -27,13 +28,7 @@ section {
 	display: block;
 }
 
-body {
-	line-height: 1;
-	background-color: #fefef8;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
+
 
 main {
 	width: 80%;
@@ -70,6 +65,11 @@ h2 {
 }
 
 body {
+	line-height: 1;
+	background-color: #fefef8;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	max-width: 1140px;
 	max-height: 1024px;
 	margin: auto;
@@ -323,53 +323,58 @@ section {
 	background-color: white;
 	border-radius: 10px;
 	width: 590px;
-	height: 750px;
+	height: 680px;
 	position: relative;
 }
 
-.modal .fa-solid .fa-xmark {
+.modal .fa-xmark {
 	font-size: 24px;
 	cursor: pointer;
 	display: flex;
-
+	position: absolute;
+	left: 535px;
+	top: 30px;
 }
 
 .modal-gallery {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-column-gap: 20px;
-	grid-row-gap: 10px;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-column-gap: 10px;
+	grid-row-gap: 30px;
+	position: absolute;
+	top: 130px;
 	justify-content: center;
 	align-items: center;
-	width: 70%;
-	height: 40%;
+	width: 50%;
+	height: 30%;
 	margin-bottom: 180px;
 }
 
 .modal figure {
-	width: 100%;
-	height: 100%;
+	width: 65%;
+	height: 30%;
 	position: relative;
 }
 
-.modal span {
+.modal span .fa-trash-can {
 	display: block;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: absolute;
 	top: 5px;
-	right: 5px;
-	background-color: black;
+	left: 53px;
 	height: 18px;
 	width: 18px;
 	border-radius: 2px;
+	background-color: black;
 }
 
-.modal .fa-trash-can {
+.fa-trash-can {
 	color: white;
 	font-size: 0.6rem;
 	cursor: pointer;
+
 }
 
 
@@ -378,9 +383,6 @@ section {
 	width: 76.86px;
 	height: 102.57px;
 }
-
-
-
 
 .modal-title {
 	margin-top: -120px;
@@ -400,11 +402,12 @@ section {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 20%;
-	width: 350px;
+	height: 120px;
+	width: 472px;
 	border-top: 1px solid gray;
 	position: absolute;
-	bottom: 0;
+	bottom: 0px;
+	top: 575px;
 }
 
 .modal-button {
@@ -431,6 +434,145 @@ section {
 }
 
 /********modale 2********/
+.modalAddWorks {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	background-color: white;
+	border-radius: 10px;
+	width: 590px;
+	height: 680px;
+	position: relative;
+}
+
+.modalAddWorks .arrow-left {
+	position: absolute;
+	top: 30px;
+	left: 15px;
+}
+
+.modalAddWorks .arrow-left .fa-arrow-left {
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+.modalAddWorks .xmark {
+	font-size: 24px;
+	cursor: pointer;
+	display: flex;
+	position: absolute;
+	left: 535px;
+	top: 30px;
+}
+
+.modalAddWorks .xmark .fa-xmark {
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+.modalAddWorks h3 {
+	margin-top: 60px;
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+.modalAddWorks form {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	position: relative;
+	height: 80%;
+	width: 80%;
+	gap: 20px;
+	bottom: 70px;
+}
+
+.modalAddWorks form .containerAddPhoto {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 30%;
+	background-color: #e8f1f6;
+	gap: 10px;
+
+}
+
+.modalAddWorks form .containerAddPhoto img {
+	display: none;
+	max-width: 100%;
+	height: 100%;
+	z-index: 2;
+	position: absolute;
+
+}
+
+.modalAddWorks form .containerAddPhoto .fa-image {
+	font-size: 4rem;
+	color: #b9c5cc;
+}
+
+.modalAddWorks form .containerAddPhoto .labelFile {
+	display: block;
+	display: flex;
+	align-items: center;
+	background-color: #b9c5cc;
+	border-radius: 15px;
+	height: 30px;
+	padding: 0 20px;
+	color: #306685;
+	cursor: pointer;
+}
+
+.modalAddWorks form .containerAddPhoto input {
+	opacity: 0;
+}
+
+.modalAddWorks form #title {
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	height: 8%;
+}
+
+.modalAddWorks form #categoryInput {
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	height: 8%;
+}
+
+.modalAddWorks form .container-button-add-work {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 77.2px;
+	width: 472px;
+	border-top: 1px solid gray;
+	position: absolute;
+	bottom: -60px;
+}
+
+.modalAddWorks form .container-button-add-work .add-work-button {
+	position: absolute;
+	top: 48px;
+}
+
+.modalAddWorks form .container-button-add-work .button-add-work {
+	background-color: #a7a7a7a7;
+	padding: 9px 50px;
+	border-radius: 25px;
+	color: white;
+	font-weight: 700;
+	font-size: 1rem;
+	font-family: Syne;
+	width: 250px;
+	cursor: pointer;
+}
+
+.modalAddWorks form .container-button-add-work .button-add-work:hover {
+	background-color: white;
+	border: 1px solid #1d6154;
+	color: #1d6154;
+}
 
 /********footer********/
 footer {
@@ -441,7 +583,6 @@ footer {
 	height: 60px;
 	margin-left: 200px;
 }
-
 
 nav ul {
 	display: flex;
