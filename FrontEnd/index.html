@@ -1,149 +1,142 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Sophie Bluel - Architecte d'intérieur</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/3931c0fcd0.js"
-      crossorigin="anonymous"
-    ></script>
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="./assets/style.css" />
-    <script src="./js/scripIndex.js" defer></script>
-    <script src="./js/scriptModal.js" defer></script>
-  </head>
 
-  <body>
-    <div class="admin-edit">
-      <p class="admin-p">
-        <i class="fa-regular fa-pen-to-square"></i> Mode édition
-      </p>
-    </div>
-    <header>
-      <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
-      <nav>
-        <ul>
-          <li class="current-page">projets</li>
-          <li><a href="mailto:Sophie.Bluel@gmail.com">contact</a></li>
-          <li><a href="login.html" id="login-link">login</a></li>
-          <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section id="introduction">
-        <figure>
-          <img src="./assets/images/sophie-bluel.png" alt="" />
-        </figure>
-        <article>
-          <h2>Designer d'espace</h2>
-          <p>
-            Je raconte votre histoire, je valorise vos idées. Je vous accompagne
-            de la conception à la livraison finale du chantier.
-          </p>
-          <p>
-            Chaque projet sera étudié en commun, de façon à mettre en valeur les
-            volumes, les matières et les couleurs dans le respect de l’esprit
-            des lieux et le choix adapté des matériaux. Le suivi du chantier
-            sera assuré dans le souci du détail, le respect du planning et du
-            budget.
-          </p>
-          <p>
-            En cas de besoin, une équipe pluridisciplinaire peut-être constituée
-            : architecte DPLG, décorateur(trice)
-          </p>
-        </article>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <title>Sophie Bluel - Architecte d'intérieur</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+    rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/3931c0fcd0.js" crossorigin="anonymous"></script>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <script src="./js/scripIndex.js" defer></script>
+  <script src="./js/scriptModal.js" defer></script>
+</head>
 
-      <section id="portfolio">
-        <h2 class="title">Mes Projets</h2>
+<body>
+  <!-- bandeau mode edition -->
+  <div class="admin-edit">
+    <p class="admin-p">
+      <i class="fa-regular fa-pen-to-square"></i> Mode édition
+    </p>
+  </div>
+  <!-- header -->
+  <header>
+    <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+    <nav>
+      <ul>
+        <li class="current-page">projets</li>
+        <li><a href="mailto:Sophie.Bluel@gmail.com">contact</a></li>
+        <li><a href="login.html" id="login-link">login</a></li>
+        <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <!-- intro -->
+    <section id="introduction">
+      <figure>
+        <img src="./assets/images/sophie-bluel.png" alt="" />
+      </figure>
+      <article>
+        <h2>Designer d'espace</h2>
+        <p>
+          Je raconte votre histoire, je valorise vos idées. Je vous accompagne
+          de la conception à la livraison finale du chantier.
+        </p>
+        <p>
+          Chaque projet sera étudié en commun, de façon à mettre en valeur les
+          volumes, les matières et les couleurs dans le respect de l’esprit
+          des lieux et le choix adapté des matériaux. Le suivi du chantier
+          sera assuré dans le souci du détail, le respect du planning et du
+          budget.
+        </p>
+        <p>
+          En cas de besoin, une équipe pluridisciplinaire peut-être constituée
+          : architecte DPLG, décorateur(trice)
+        </p>
+      </article>
+    </section>
 
-        <aside
-          id="container-modal"
-          aria-hidden="true"
-          role="dialog"
-          aria-labelledby="modal-title"
-        >
-          <!-- modale 1 -->
-          <section class="modal">
-            <span><i class="fa-solid fa-xmark"></i></span>
-            <h3 class="modal-title">Galerie photo</h3>
-            <div class="modal-gallery"></div>
-            <!--div pour ajout de la gallerie depuis js-->
-            <div class="modal-gallery-button">
-              <div class="modal-button">
-                <button>Ajouter une photo</button>
+      <!-- portfolio -->
+    <section id="portfolio">
+      <h2 class="title">Mes Projets</h2>
+
+      <aside id="container-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <!-- modale 1 -->
+        <section class="modal">
+          <span><i class="fa-solid fa-xmark"></i></span>
+          <h3 class="modal-title">Galerie photo</h3>
+          <div class="modal-gallery"></div><!--div pour ajout de la gallerie depuis js-->
+          <div class="modal-gallery-button">
+            <div class="modal-button">
+              <button>Ajouter une photo</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- modale 2 -->
+        <section class="modalAddWorks">
+          <span class="arrow-left"><i class="fa-solid fa-arrow-left"></i></span>
+          <span class="xmark"><i class="fa-solid fa-xmark"></i></span>
+          <h3>Ajout photo</h3>
+          <form id="formAddWorks">
+            <div class="containerAddPhoto">
+              <i class="fa-regular fa-image"></i>
+              <label for="file" class="labelFile">+ Ajouter photo</label>
+              <p>jpg,png : 4mo max</p>
+              <input type="file" name="image" id="file" accept="image/jpg, image/png" required/>
+              <img id="previewImage" src="#" alt="Aperçu de l'image" />
+            </div>
+            <label for="title">Titre</label>
+            <input type="text" name="title" id="title" required />
+            <label for="categoryInput">Catégorie</label>
+            <select id="categoryInput" name="category" required></select>
+            <div class="container-button-add-work">
+              <div class="add-work-button">
+                <button type="submit" class="button-add-work">Valider</button>
               </div>
             </div>
-          </section>
+          </form>
+        </section>
+      </aside>
 
-          <!-- modale 2 -->
-          <section class="modalAddWorks">
-            <span class="arrow-left"
-              ><i class="fa-solid fa-arrow-left"></i
-            ></span>
-            <span class="xmark"><i class="fa-solid fa-xmark"></i></span>
-            <h3>Ajout photo</h3>
-            <form id="formAddWorks">
-              <div class="containerAddPhoto">
-                <i class="fa-regular fa-image"></i>
-                <label for="file" class="labelFile">+ Ajouter photo</label>
-                <p>jpg,png : 4mo max</p>
-                <input
-                  type="file"
-                  name="image"
-                  id="file"
-                  accept="image/jpg, image/png"
-                  required
-                />
-                <img id="previewImage" src="#" alt="Aperçu de l'image" />
-              </div>
-              <label for="title">Titre</label>
-              <input type="text" name="title" id="title" required />
-              <label for="categoryInput">Catégorie</label>
-              <select id="categoryInput" name="category" required></select>
-              <div class="container-button-add-work">
-                <div class="add-work-button">
-                  <button type="submit" class="button-add-work">Valider</button>
-                </div>
-              </div>
-            </form>
-          </section>
-        </aside>
+      <!-- filtres -->
+      <div class="container-filters">
+        <button class="buttons-filters active" id="0">Tous</button>
+      </div>
 
-        <div class="container-filters">
-          <button class="buttons-filters active" id="0">Tous</button>
-        </div>
-        <div class="gallery"></div>
-      </section>
-      <section id="contact">
-        <h2 class="title">Contact</h2>
-        <p>Vous avez un projet ? Discutons-en !</p>
-        <form action="#" method="post">
-          <label for="name">Nom</label>
-          <input type="text" name="name" id="name" />
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
-          <label for="message">Message</label>
-          <textarea name="message" id="message" cols="30" rows="10"></textarea>
-          <input type="submit" value="Envoyer" />
-        </form>
-      </section>
-    </main>
+      <!-- gallerie -->
+      <div class="gallery"></div>
+    </section>
 
-    <footer class="footer">
-      <nav class="footer-nav">
-        <ul>
-          <li>Mentions Légales</li>
-        </ul>
-      </nav>
-    </footer>
-  </body>
+      <!-- contact -->
+    <section id="contact">
+      <h2 class="title">Contact</h2>
+      <p>Vous avez un projet ? Discutons-en !</p>
+      <form action="#" method="post">
+        <label for="name">Nom</label>
+        <input type="text" name="name" id="name" />
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" />
+        <label for="message">Message</label>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        <input type="submit" value="Envoyer" />
+      </form>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer class="footer">
+    <nav class="footer-nav">
+      <ul>
+        <li>Mentions Légales</li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+
 </html>

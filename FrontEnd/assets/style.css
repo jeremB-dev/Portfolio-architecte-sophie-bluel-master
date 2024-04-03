@@ -28,8 +28,6 @@ section {
 	display: block;
 }
 
-
-
 main {
 	width: 80%;
 }
@@ -135,7 +133,7 @@ header nav ul li:hover {
 
 /**********bandeau mode edition**********/
 .admin-edit {
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
 	background-color: black;
@@ -466,7 +464,7 @@ section {
 	top: 30px;
 }
 
-.modalAddWorks .xmark .fa-xmark {
+.modalAddWorks .fa-xmark {
 	font-size: 1.5rem;
 	cursor: pointer;
 }
@@ -549,6 +547,17 @@ section {
 	border-top: 1px solid gray;
 	position: absolute;
 	bottom: -60px;
+}
+
+.modalAddWorks form .container-button-add-work .buttonValidForm {
+	background-color: #1d6154;
+	padding: 9px 50px;
+	border-radius: 25px;
+	color: white;
+	font-weight: 700;
+	font-size: 1rem;
+	font-family: Syne;
+	cursor: pointer;
 }
 
 .modalAddWorks form .container-button-add-work .add-work-button {

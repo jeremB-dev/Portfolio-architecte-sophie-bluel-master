@@ -21,9 +21,12 @@ function mainModal() {
     displayWorksGallery();
     displayModalAddWorks();
     returnToModalPortfolio();
+    returnToModalPortfolio();
+    addWorks();
+    prevImg();
+    verifFormCompleted();
   }
 }
-
 //affichage de la modale au click sur le bouton modifier / je n'arrive pas creer une fonction pour cette partie
 
 spanEdit.addEventListener("click", function () {
@@ -130,3 +133,41 @@ function returnToModalPortfolio() {
   });
 }
 returnToModalPortfolio();
+
+
+
+//Fonction qui génère les catégorie dynamiquement pour la modale
+async function displayCategoryModal() {
+  const select = document.querySelector("form select");
+  const categorys = await getCategory();
+  categorys.forEach((category) => {
+    // creation des options pour le select
+    const option = document.createElement("option");
+    option.value = category.id;
+    option.textContent = category.name;
+    select.appendChild(option);
+  });
+}
+displayCategoryModal();
+
+//fonction prévisualisation de l'image
+function prevImg() {
+  inputFile.addEventListener("change", () => {
+    const file = inputFile.files[0];
+    // console.log(file);
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        previewImage.src = e.target.result;
+        previewImage.style.display = "block";
+        // labelFile.style.display ="none"
+        // paragraphFile.style.display ="none"
+      };
+      reader.readAsDataURL(file);
+    } else {
+      previewImage.style.display = "none";
+    }
+  });
+}
+prevImg();
+

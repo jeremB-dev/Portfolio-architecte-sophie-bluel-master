@@ -10,7 +10,7 @@ const sectionPortfolio = document.querySelector("#portfolio");
 const sectionPortfolioH2 = document.querySelector("#portfolio h2");
 const editionTextProject = "modifier"
 const editionLogo = `<i class="fa-regular fa-pen-to-square"></i>`;
-const adminEdit = document.querySelector("admin-edit");
+const adminEdit = document.querySelector(".admin-edit");
 const divEdit = document.createElement("div");
 const spanEdit = document.createElement("span");
 const adminConnexionProject = `${editionLogo}  ${editionTextProject} `;
@@ -143,6 +143,8 @@ function loginUser() {
     sectionPortfolio.prepend(divEdit);
     document.getElementById("portfolio",)
     containerFiltres.style = "display:none";
+    adminEdit.style = "display:flex";
+    //console.log("adminEdit.style");
   } else {
     
     //console.log("L'utilisateur n'est pas connecté");
@@ -159,7 +161,9 @@ function logoutUser() {
       logOut.textContent = "login";
       window.sessionStorage.setItem("userId", "");
       window.location.href = "index.html";
-      adminEdit.style = "display:none";
+    } else {
+      //renvoi sur page conexion
+      window.location.href = "login.html";
     }
   });
 }
