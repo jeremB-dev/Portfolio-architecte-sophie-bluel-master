@@ -81,7 +81,7 @@ header {
 	display: flex;
 	justify-content: space-between;
 	margin: 50px 0;
-	width: 90%;
+	width: 100%;
 }
 
 header h1 {
@@ -492,10 +492,20 @@ section {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 30%;
+	height: 32%;
 	background-color: #e8f1f6;
-	gap: 10px;
+	gap: 30px;
 
+}
+
+.modalAddWorks form .containerAddPhoto .containerAddImage {
+	display: flex;
+	position: absolute;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	row-gap: 10px;
+	top: 20px;
 }
 
 .modalAddWorks form .containerAddPhoto img {
@@ -504,7 +514,7 @@ section {
 	height: 100%;
 	z-index: 2;
 	position: absolute;
-
+	bottom: 13px;
 }
 
 .modalAddWorks form .containerAddPhoto .fa-image {
@@ -590,11 +600,20 @@ footer {
 	background-color: #ffffff;
 	width: 1440px;
 	height: 60px;
-	margin-left: 200px;
+
 }
 
-nav ul {
+footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em;
+}
+
+.footer-login {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	margin: 10em;
+	background-color: #ffffff;
+	width: 100%;
 }

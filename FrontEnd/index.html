@@ -61,16 +61,17 @@
       </article>
     </section>
 
-      <!-- portfolio -->
+    <!-- portfolio -->
     <section id="portfolio">
       <h2 class="title">Mes Projets</h2>
 
-      <aside id="container-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+      <aside id="container-modal">
         <!-- modale 1 -->
         <section class="modal">
           <span><i class="fa-solid fa-xmark"></i></span>
           <h3 class="modal-title">Galerie photo</h3>
-          <div class="modal-gallery"></div><!--div pour ajout de la gallerie depuis js-->
+          <div class="modal-gallery"></div>
+          <!--div pour ajout de la gallerie depuis js-->
           <div class="modal-gallery-button">
             <div class="modal-button">
               <button>Ajouter une photo</button>
@@ -85,16 +86,18 @@
           <h3>Ajout photo</h3>
           <form id="formAddWorks">
             <div class="containerAddPhoto">
-              <i class="fa-regular fa-image"></i>
-              <label for="file" class="labelFile">+ Ajouter photo</label>
-              <p>jpg,png : 4mo max</p>
-              <input type="file" name="image" id="file" accept="image/jpg, image/png" required/>
-              <img id="previewImage" src="#" alt="Aperçu de l'image" />
+              <div class="containerAddImage">
+                <i class="fa-regular fa-image"></i>
+                <label for="file" class="labelFile">+ Ajouter photo</label>
+                <p>jpg, png : 4mo max</p>
+                <input type="file" name="image" id="file" accept="image/jpg, image/png" required />
+                <img id="previewImage" src="#" alt="Aperçu de l'image" />
+              </div>
             </div>
             <label for="title">Titre</label>
             <input type="text" name="title" id="title" required />
             <label for="categoryInput">Catégorie</label>
-            <select id="categoryInput" name="category" required></select>
+            <select id="categoryInput" name="category" required></select> <!--erreur w3c-->
             <div class="container-button-add-work">
               <div class="add-work-button">
                 <button type="submit" class="button-add-work">Valider</button>
@@ -113,7 +116,7 @@
       <div class="gallery"></div>
     </section>
 
-      <!-- contact -->
+    <!-- contact -->
     <section id="contact">
       <h2 class="title">Contact</h2>
       <p>Vous avez un projet ? Discutons-en !</p>
