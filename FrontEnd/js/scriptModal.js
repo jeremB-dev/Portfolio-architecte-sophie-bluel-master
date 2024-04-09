@@ -1,7 +1,6 @@
 //fonction principale
 const containerModal = document.querySelector("#container-modal");
 const modalGallery = document.querySelector(".modal-gallery");
-
 //Variables pour l'affichage de la deuxieme mmodale partie
 const buttonAddPhoto = document.querySelector(".modal-button button");
 const modalPortfolio = document.querySelector(".modal");
@@ -24,7 +23,7 @@ function mainModal() {
     returnToModalPortfolio();
     addWorks();
     prevImg();
-    verifFormCompleted();
+    verifValidForm();
   }
 }
 //affichage de la modale au click sur le bouton modifier / je n'arrive pas creer une fonction pour cette partie
@@ -170,4 +169,63 @@ function prevImg() {
   });
 }
 prevImg();
+
+// fontion qui vérifie si tout les inputs sont remplis
+function verifValidForm() {
+  const buttonValidForm = document.querySelector(
+    ".container-button-add-work  button"
+  );
+  formAddWorks.addEventListener("input", () => {
+    if (!inputTitle.value == "" && !inputFile.files[0] == "") {
+      buttonValidForm.classList.remove("button-add-work");
+      buttonValidForm.classList.add("buttonValidForm");
+    } else {
+      buttonValidForm.classList.remove("buttonValidForm");
+      buttonValidForm.classList.add("button-add-work");
+    }
+  });
+}
+verifValidForm();
+
+//fonction ajout d'une photo
+function addWorks() {
+  formAddWorks.addEventListener("submit", (e) => {
+    e.preventDefault();
+    // Récupération des Valeurs du Formulaire
+    const formData ={
+      title: inputTitle.value,
+      categoryId: inputCategory.value,
+      imageUrl: inputFile.files[0],
+      category: {
+        id: inputCategory.value,
+        name: inputCategory.options[inputCategory.selectedIndex].textContent,
+    },
+    };
+    fetch("http://localhost:5678/api/works", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Une erreur est survenue");
+        }
+        return response.json();
+      })
+      .then(() => {
+        displayModalAddWorks();
+        displayWorksGallery();
+        formAddWorks.reset();
+        modalPortfolio.style.display = "flex";
+        modalAddWorks.style.display = "none";
+        previewImage.style.display = "none";
+      })
+      .catch((error) => {
+        console.error("Une erreur est survenue : ", error);
+      });
+  });
+}
+
 
