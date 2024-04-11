@@ -196,7 +196,6 @@ function addWorks() {
     formData.append("image", inputFile.files[0]);
     formData.append("title", inputTitle.value);
     formData.append("category", inputCategory.value);
-    displayGallery();
     //console.log(formData);
     fetch("http://localhost:5678/api/works", {
       method: "POST",
