@@ -76,8 +76,11 @@ async function displayGallery() {
     modalGallery.appendChild(figure);
   });
   deletePhoto(); //appel de la fonction deletePhoto apres la creation de la gallerie et des poubelles
+  prevImg();
 }
 displayGallery();
+displayCategoryModal();
+prevImg();
 
 //Objet de paramétrage pour requette DELETE avec token
 const deleteWorkID = {
@@ -115,6 +118,7 @@ function displayModalAddWorks() {
     modalPortfolio.style.display = "none";
     modalAddWorks.style.display = "flex";
   });
+  addWorks();
 }
 displayModalAddWorks();
 
@@ -133,8 +137,6 @@ function returnToModalPortfolio() {
 }
 returnToModalPortfolio();
 
-
-
 //Fonction qui génère les catégorie dynamiquement pour la modale
 async function displayCategoryModal() {
   const select = document.querySelector("form select");
@@ -147,7 +149,6 @@ async function displayCategoryModal() {
     select.appendChild(option);
   });
 }
-displayCategoryModal();
 
 //fonction prévisualisation de l'image
 function prevImg() {
@@ -168,7 +169,7 @@ function prevImg() {
     }
   });
 }
-prevImg();
+ // Lors de l'affichage de la deuxième modale ?
 
 // fontion qui vérifie si tout les inputs sont remplis
 function verifValidForm() {
@@ -186,24 +187,26 @@ function verifValidForm() {
   });
 }
 verifValidForm();
+prevImg();
 
 //fonction ajout d'une photo
 function addWorks() {
   formAddWorks.addEventListener("submit", (e) => {
+    // ?? cibler les input ici vérifier que
+
     e.preventDefault();
+    prevImg();
     // Récupération des Valeurs du Formulaire
-    const formData ={
-      title: inputTitle.value,
-      categoryId: inputCategory.value,
-      imageUrl: inputFile.files[0],
-      category: {
-        id: inputCategory.value,
-        name: inputCategory.options[inputCategory.selectedIndex].textContent,
-    },
-    };
+    const formData = new FormData();
+    formData.append("image", inputFile.files[0]);
+    formData.append("title", inputTitle.value);
+    formData.append("category", inputCategory.value);
+
+    console.log(formData); // undefined, error not
+    
     fetch("http://localhost:5678/api/works", {
       method: "POST",
-      body: JSON.stringify(formData),
+      body: formData,
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -227,5 +230,3 @@ function addWorks() {
       });
   });
 }
-
-
