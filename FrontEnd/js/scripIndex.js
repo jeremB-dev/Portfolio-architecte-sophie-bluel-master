@@ -107,7 +107,7 @@ function createButton(category) {
 
 async function displayByCategory() {
   const works = await getWorks();
-  const btn = document.querySelectorAll(".buttons-filters"); //correctionrecupère les boutons
+  const btn = document.querySelectorAll(".buttons-filters"); //recupère les boutons
   btn.forEach((button) => {
     button.addEventListener("click", (e) => {
       btn.forEach((btn) => {
