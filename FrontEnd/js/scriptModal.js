@@ -168,13 +168,10 @@ function prevImg() {
     }
   });
 }
- // Lors de l'affichage de la deuxième modale ?
 
 // fontion qui vérifie si tout les inputs sont remplis
 function verifValidForm() {
-  const buttonValidForm = document.querySelector(
-    ".container-button-add-work  button"
-  );
+  const buttonValidForm = document.querySelector(".container-button-add-work  button");
   formAddWorks.addEventListener("input", () => {
     if (!inputTitle.value == "" && !inputFile.files[0] == "") {
       buttonValidForm.classList.remove("button-add-work");
@@ -201,7 +198,7 @@ function addWorks() {
       method: "POST",
       body: formData,
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token}`
       },
     })
       .then((response) => {

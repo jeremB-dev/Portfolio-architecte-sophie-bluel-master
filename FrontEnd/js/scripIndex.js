@@ -1,5 +1,4 @@
 /******Variable*******/
-
 const gallery = document.querySelector(".gallery");
 const body = document.querySelector("body");
 const containerFiltres = document.querySelector(".container-filters");
