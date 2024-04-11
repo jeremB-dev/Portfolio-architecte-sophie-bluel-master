@@ -75,8 +75,9 @@ async function displayGallery() {
     figure.appendChild(span);
     modalGallery.appendChild(figure);
   });
-  deletePhoto(); //appel de la fonction deletePhoto apres la creation de la gallerie et des poubelles
   prevImg();
+  deletePhoto(); //appel de la fonction deletePhoto apres la creation de la gallerie et des poubelles
+  
 }
 displayGallery();
 displayCategoryModal();
@@ -193,7 +194,6 @@ prevImg();
 function addWorks() {
   formAddWorks.addEventListener("submit", (e) => {
     // ?? cibler les input ici vérifier que
-
     e.preventDefault();
     prevImg();
     // Récupération des Valeurs du Formulaire
@@ -202,7 +202,7 @@ function addWorks() {
     formData.append("title", inputTitle.value);
     formData.append("category", inputCategory.value);
 
-    console.log(formData); // undefined, error not
+    //console.log(formData); // undefined, error not
     
     fetch("http://localhost:5678/api/works", {
       method: "POST",

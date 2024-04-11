@@ -107,11 +107,10 @@ function createButton(category) {
 
 async function displayByCategory() {
   const works = await getWorks();
-  const buttons = document.querySelectorAll(".container-filters"); //probleme selecteur (pas tous les boutons)
-
-  buttons.forEach((button) => {
+  const btn = document.querySelectorAll(".buttons-filters"); //correction recupère les boutons
+  btn.forEach((button) => {
     button.addEventListener("click", (e) => {
-      buttons.forEach((btn) => {
+      btn.forEach((btn) => {
         btn.classList.remove("active");
       });
       button.classList.add("active");
