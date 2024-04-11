@@ -22,7 +22,6 @@ function mainModal() {
     returnToModalPortfolio();
     returnToModalPortfolio();
     addWorks();
-    prevImg();
     verifValidForm();
   }
 }
@@ -75,7 +74,6 @@ async function displayGallery() {
     figure.appendChild(span);
     modalGallery.appendChild(figure);
   });
-  prevImg();
   deletePhoto(); //appel de la fonction deletePhoto apres la creation de la gallerie et des poubelles
   
 }
@@ -188,22 +186,18 @@ function verifValidForm() {
   });
 }
 verifValidForm();
-prevImg();
 
 //fonction ajout d'une photo
 function addWorks() {
   formAddWorks.addEventListener("submit", (e) => {
-    // ?? cibler les input ici vérifier que
     e.preventDefault();
-    prevImg();
     // Récupération des Valeurs du Formulaire
     const formData = new FormData();
     formData.append("image", inputFile.files[0]);
     formData.append("title", inputTitle.value);
     formData.append("category", inputCategory.value);
-
-    //console.log(formData); // undefined, error not
-    
+    displayGallery();
+    //console.log(formData);
     fetch("http://localhost:5678/api/works", {
       method: "POST",
       body: formData,
@@ -218,6 +212,7 @@ function addWorks() {
         return response.json();
       })
       .then(() => {
+        displayGallery();
         displayModalAddWorks();
         displayWorksGallery();
         formAddWorks.reset();
@@ -227,6 +222,6 @@ function addWorks() {
       })
       .catch((error) => {
         console.error("Une erreur est survenue : ", error);
-      });
+      }); 
   });
 }

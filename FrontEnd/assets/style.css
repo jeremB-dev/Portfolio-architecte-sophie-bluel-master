@@ -361,8 +361,6 @@ header nav ul li:hover {
 
 }
 
-
-
 .modal img {
 	width: 76.86px;
 	height: 102.57px;
@@ -408,13 +406,6 @@ header nav ul li:hover {
 	font-size: 1rem;
 	font-family: Syne;
 	cursor: pointer;
-}
-
-.modal button:hover {
-	background-color: white;
-	border: 1px solid #1d6154;
-	background-color: #1d6154;
-
 }
 
 /********modale 2********/
@@ -554,11 +545,12 @@ header nav ul li:hover {
 	font-size: 1rem;
 	font-family: Syne;
 	cursor: pointer;
+	width: 256px;
 }
 
 .modalAddWorks form .container-button-add-work .add-work-button {
 	position: absolute;
-	top: 48px;
+	top: 47px;
 }
 
 .modalAddWorks form .container-button-add-work .button-add-work {
@@ -573,11 +565,7 @@ header nav ul li:hover {
 	cursor: pointer;
 }
 
-.modalAddWorks form .container-button-add-work .button-add-work:hover {
-	background-color: white;
-	border: 1px solid #1d6154;
-	color: #1d6154;
-}
+
 
 /****section contact formulaire********/
 #contact {
