@@ -68,7 +68,6 @@ function createWork(work) {
 //**********afiichage des boutons par catégories**************/
 
 //récuperer le tableau des catégories
-
 async function getWorks() {
   const requete = await fetch("http://localhost:5678/api/works");
   return requete.json();
@@ -82,7 +81,6 @@ getCategorys();
 
 
 //creation des boutons
-
 function createAllButtons() {
   getCategory().then((data) => {
     // console.log(data);
@@ -103,7 +101,6 @@ function createButton(category) {
 
 
 // Trie par classe sur les boutons filtres
-
 async function displayByCategory() {
   const works = await getWorks();
   const btn = document.querySelectorAll(".buttons-filters"); //recupère les boutons
@@ -130,7 +127,6 @@ async function displayByCategory() {
 
 
 /*****Page utilisateur conecté*****/
-
 function loginUser() {
   if (token) {
     logOut.textContent = "logout";
@@ -151,7 +147,6 @@ function loginUser() {
 
 
 /*****Page utilisateur déconecté*****/
-
 function logoutUser() {
   logOut.addEventListener("click", () => {
     if (token) {

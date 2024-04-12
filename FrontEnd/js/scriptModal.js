@@ -25,7 +25,7 @@ function mainModal() {
     verifValidForm();
   }
 }
-//affichage de la modale au click sur le bouton modifier / je n'arrive pas creer une fonction pour cette partie
+//affichage de la modale au click sur le bouton modifier
 
 spanEdit.addEventListener("click", function () {
   //console.log("spanEdith");
@@ -34,7 +34,7 @@ spanEdit.addEventListener("click", function () {
   modalAddWorks.style.display = "none";
 });
 
-//Fermuture de la modal sur la croix 1 / je n'arrive pas creer une fonction pour cette partie
+//Fermuture de la modal sur la croix 1
 
 const xmark = document.querySelector("#container-modal .fa-xmark");
 xmark.addEventListener("click", function () {
