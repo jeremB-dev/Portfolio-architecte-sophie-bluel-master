@@ -12,9 +12,9 @@ Projet 6 formation Openclassrooms Intégrateur Web .
 
 ---
 
-### Objectif
+## Objectif
 
-#### - Scénario
+### - Scénario
 
 Ce projet vous engage à créer une page web dynamique pour le site internet d'une architecte d'intérieur en utilisant JavaScript et en communiquant avec une API.
 
@@ -25,7 +25,7 @@ Ces éléments seront développés from scratch, vous offrant l'opportunité de 
 
 Pour la première fois, vous aurez accès à un code back-end pour tester les fonctionnalités. Vous apprendrez à communiquer avec une API, ce qui est crucial pour les applications web modernes.
 
-#### - Objectif pédagogiques
+## - Objectif pédagogiques
 
 1. Gérer les évenements utilisateurs avec JavaScript
 2. Manipuler les éléments du DOM avec JavScript
@@ -33,7 +33,7 @@ Pour la première fois, vous aurez accès à un code back-end pour tester les fo
 
 ---
 
-### Information pour le lancer le code
+## Information pour le lancer le code
 
 - Afin de pouvoir faire fonctionner le back-end, vous devez avoir installé Node.js et npm sur votre ordinateur.
 
