@@ -6,9 +6,9 @@ Projet 6 formation Openclassrooms Intégrateur Web .
 
 ---
 
-<img alt="screenshot du site" src="/FrontEnd/assets/Img Readme/screen site.png" width="300" height="150"> <img alt="screenshot modal 1" src="/FrontEnd/assets/Img Readme/screen modale1.png" width="300" height="150">
+<img alt="screenshot du site" src="/FrontEnd/assets/Img Readme/screen site.png" width="500" height="250"> <img alt="screenshot modal 1" src="/FrontEnd/assets/Img Readme/screen modale1.png" width="500" height="250">
 
-<img alt="screenshot modale 2" src="/FrontEnd/assets/Img Readme/screen modal2.png" width="300" height="150"> <img alt="screenshot page login" src="/FrontEnd/assets/Img Readme/screen login.png" width="300" height="150">
+<img alt="screenshot modale 2" src="/FrontEnd/assets/Img Readme/screen modal2.png" width="500" height="250"> <img alt="screenshot page login" src="/FrontEnd/assets/Img Readme/screen login.png" width="500" height="250">
 
 ---
 
