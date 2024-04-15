@@ -25,7 +25,7 @@ Ces éléments seront développés from scratch, vous offrant l'opportunité de 
 
 Pour la première fois, vous aurez accès à un code back-end pour tester les fonctionnalités. Vous apprendrez à communiquer avec une API, ce qui est crucial pour les applications web modernes.
 
-###  Objectif pédagogiques
+### Objectif pédagogiques
 
 1. Gérer les évenements utilisateurs avec JavaScript
 2. Manipuler les éléments du DOM avec JavScript
@@ -37,13 +37,15 @@ Pour la première fois, vous aurez accès à un code back-end pour tester les fo
 
 Afin de pouvoir faire fonctionner le back-end, vous devez avoir installé Node.js et npm sur votre ordinateur.
 Lancer le backend depuis votre terminal en suivant les instruction :
-  1. Après avoir récupéré le REPO executez la commande `npm install` pour installer les dépendances du projet.
-  2. Une fois les dépendances installées lancez le projet avec la commande `npm start`.
+
+1. Après avoir récupéré le REPO executez la commande `npm install` pour installer les dépendances du projet.
+2. Une fois les dépendances installées lancez le projet avec la commande `npm start`.
 
 Si vous désirez afficher le code du backend et du frontend, faites le dans 2 instances de VSCode différentes pour éviter tout problème.
 
 Compte de test pour Sophie Bluel :
-  1. email : sophie.bluel@test.tld
-  2. password: S0phie
+
+1. email : sophie.bluel@test.tld
+2. password: S0phie
 
 ---
