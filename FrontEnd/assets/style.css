@@ -10,7 +10,6 @@
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -83,6 +82,7 @@ body {
 }
 
 /** end reset css**/
+
 /*********header**********/
 header {
 	display: flex;
@@ -148,23 +148,15 @@ header nav ul li:hover {
 	justify-content: center;
 	align-items: center;
 	background-color: black;
-	height: 39px;
+	height: 59px;
 	width: 100%;
-
-
 }
 
 .admin-edit p {
 	color: white;
-
 }
 
-
-
-
 /**********introduction**********/
-
-
 .title {
 	font-family: "Syne";
 	font-weight: 700;
@@ -276,7 +268,6 @@ header nav ul li:hover {
 	align-items: center;
 	margin-bottom: 5em;
 	gap: 10px;
-
 }
 
 .div-edit span {
@@ -358,7 +349,6 @@ header nav ul li:hover {
 	color: white;
 	font-size: 0.6rem;
 	cursor: pointer;
-
 }
 
 .modal img {
@@ -374,7 +364,6 @@ header nav ul li:hover {
 	font-size: 26px;
 	font-family: "Work Sans";
 	font-weight: 400;
-
 	line-height: 30.5px;
 	position: absolute;
 	top: 25%;
@@ -472,7 +461,6 @@ header nav ul li:hover {
 	height: 32%;
 	background-color: #e8f1f6;
 	gap: 30px;
-
 }
 
 .modalAddWorks form .containerAddPhoto .containerAddImage {
@@ -681,7 +669,6 @@ footer {
 	position: relative;
 	top: 350px;
 	width: 100%;
-
 }
 
 footer nav ul {

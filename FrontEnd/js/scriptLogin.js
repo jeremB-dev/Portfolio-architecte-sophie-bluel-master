@@ -45,6 +45,6 @@ form.addEventListener("submit", (e) => {
       window.location.href = "index.html";
     })
     .catch((error) => {
-      console.error("Une erreur est survenue : ", error);
+      //console.error("Une erreur est survenue : ", error);
     });
 });
