@@ -26,7 +26,6 @@ function mainModal() {
   }
 }
 //affichage de la modale au click sur le bouton modifier
-
 spanEdit.addEventListener("click", function () {
   //console.log("spanEdith");
   containerModal.style.display = "flex";
@@ -35,7 +34,6 @@ spanEdit.addEventListener("click", function () {
 });
 
 //Fermuture de la modal sur la croix 1
-
 const xmark = document.querySelector("#container-modal .fa-xmark");
 xmark.addEventListener("click", function () {
   containerModal.style.display = "none";
@@ -225,23 +223,40 @@ function addWorks() {
         Authorization: `Bearer ${token}`, // Inclut le token d'authentification dans les en-têtes
       },
     })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Une erreur est survenue"); // Lance une erreur si la réponse n'est pas OK
-        }
-        return response.json(); // Convertit la réponse en JSON
-      })
-      .then(() => {
-        displayGallery(); // Met à jour la galerie pour afficher la nouvelle image
-        displayModalAddWorks(); // Affiche ou met à jour le modal d'ajout d'œuvres
-        displayWorksGallery(); // Met à jour la galerie principale
-        formAddWorks.reset(); // Réinitialise le formulaire
-        modalPortfolio.style.display = "flex";
-        modalAddWorks.style.display = "none";
-        previewImage.style.display = "none";
-      })
-      .catch((error) => {
-        console.error("Une erreur est survenue : ", error); // Affiche une erreur en cas de problème
-      });
+          fetch("http://localhost:5678/api/works", {
+            method: "POST", // Utilise la méthode POST pour envoyer les données
+            body: formData, // Attache les données du formulaire à la requête
+            headers: {
+              Authorization: `Bearer ${token}`, // Inclut le token d'authentification dans les en-têtes
+            },
+          })
+            .then((response) => { // Récupère la réponse de la requête
+              if (!response.ok) {
+                throw new Error("Une erreur est survenue"); // Lance une erreur si la réponse n'est pas OK
+              }
+              return response.json(); // Convertit la réponse en JSON
+            })
+            .then(() => {
+              displayGallery(); // Met à jour la galerie pour afficher la nouvelle image
+              displayModalAddWorks(); // Affiche ou met à jour le modal d'ajout d'œuvres
+              displayWorksGallery(); // Met à jour la galerie principale
+              formAddWorks.reset(); // Réinitialise le formulaire
+              if (!response.ok) {
+                throw new Error("Une erreur est survenue"); // Lance une erreur si la réponse n'est pas OK
+              }
+              return response.json(); // Convertit la réponse en JSON
+            })
+            .then(() => {
+              displayGallery(); // Met à jour la galerie pour afficher la nouvelle image
+              displayModalAddWorks(); // Affiche ou met à jour le modal d'ajout d'œuvres
+              displayWorksGallery(); // Met à jour la galerie principale
+              formAddWorks.reset(); // Réinitialise le formulaire
+              modalPortfolio.style.display = "flex";
+              modalAddWorks.style.display = "none";
+              previewImage.style.display = "none";
+            })
+            .catch((error) => {
+              console.error("Une erreur est survenue : ", error); // Affiche une erreur en cas de problème
+            });
   });
 }

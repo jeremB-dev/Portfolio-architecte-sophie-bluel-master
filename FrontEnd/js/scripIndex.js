@@ -53,8 +53,8 @@ function displayWorksGallery() {
     });
   });
 }
-
-function createWork(work) {
+// Fonction pour créer un élément 'figure' pour chaque work et l'ajouter au DOM
+function createWork(work) { 
   // Crée un élément 'figure' pour chaque work
   const figure = document.createElement("figure");
   // Crée un élément 'img' pour l'image du work
@@ -88,7 +88,7 @@ getCategorys();
 
 //creation des boutons
 function createAllButtons() {
-  // appelle de la fonction getCategory qui retourne une promesse avec les données des catégories
+  // appel de la fonction getCategory qui retourne une promesse avec les données des catégories
   getCategory().then((data) => {
     // parcours de chaque catégorie reçue
     data.forEach((category) => {
@@ -116,14 +116,16 @@ async function displayByCategory() {
   // Récupère les données des travaux de manière asynchrone
   const works = await getWorks();
   const btn = document.querySelectorAll(".buttons-filters"); //Sélectionne tous les boutons avec la classe 'buttons-filters'
+  // Parcourt chaque bouton
   btn.forEach((button) => {
     // Ajoute un écouteur d'événements à chaque bouton
     button.addEventListener("click", (e) => {
       // Enlève la classe 'active' de tous les boutons pour réinitialiser l'état actif
       btn.forEach((btn) => {
-        // Ajoute la classe 'active' au bouton cliqué
+        // Enlève la classe 'active' de chaque bouton
         btn.classList.remove("active");
       });
+      // Ajoute la classe 'active' au bouton cliqué
       button.classList.add("active");
       // Récupère l'ID du bouton cliqué
       const btnId = e.target.id;
@@ -147,8 +149,7 @@ function loginUser() {
   // Vérifie si le token d'authentification existe
   if (token) {
     // Si un token existe, cela signifie que l'utilisateur est connecté
-
-    // Change le texte d'un élément pour afficher "logout"
+    // et Change le texte d'un élément pour afficher "logout"
     logOut.textContent = "logout";
     // Insère du contenu HTML dans un élément 'spanEdit'
     spanEdit.innerHTML = adminConnexionProject;
@@ -159,23 +160,29 @@ function loginUser() {
     divEdit.appendChild(spanEdit);
     // Ajoute 'divEdit' au début de 'sectionPortfolio'
     sectionPortfolio.prepend(divEdit);
-    // La ligne suivante semble être incomplète et pourrait être une erreur
+    // Affiche les options d'administration
     document.getElementById("portfolio");
     containerFiltres.style = "display:none"; // Cache le conteneur des filtres
     adminEdit.style = "display:flex"; // Affiche les options d'administration
     //console.log("adminEdit.style");
-  } else {
+  } else { // Si aucun token n'existe, cela signifie que l'utilisateur n'est pas connecté
     //console.log("L'utilisateur n'est pas connecté");
   }
 }
 
 /*****Page utilisateur déconecté*****/
-function logoutUser() {
-  logOut.addEventListener("click", () => {
+function logoutUser() { 
+  // Ajoute un écouteur d'événements à l'élément 'logOut' pour gérer la déconnexion de l'utilisateur
+  logOut.addEventListener("click", () => { 
+    // Vérifie si un token d'authentification existe
     if (token) {
+      // Supprime le token d'authentification de la session
       window.sessionStorage.setItem("token", "");
+      // Change le texte de l'élément 'logOut' pour afficher "login"
       logOut.textContent = "login";
+      // Supprime les options d'administration
       window.sessionStorage.setItem("userId", "");
+      // Supprime les options d'administration
       window.location.href = "index.html";
     } else {
       //renvoi sur page conexion
