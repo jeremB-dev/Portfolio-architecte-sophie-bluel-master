@@ -1,7 +1,7 @@
-//fonction principale
+// variables globales
 const containerModal = document.querySelector("#container-modal");
 const modalGallery = document.querySelector(".modal-gallery");
-//Variables pour l'affichage de la deuxieme mmodale partie
+//Variables pour l'affichage de la deuxieme mmodale
 const buttonAddPhoto = document.querySelector(".modal-button button");
 const modalPortfolio = document.querySelector(".modal");
 const modalAddWorks = document.querySelector(".modalAddWorks");
@@ -48,6 +48,7 @@ xmark2.addEventListener("click", function () {
 
 //Fermeture de la modal sur le container grisé
 containerModal.addEventListener("click", function (e) {
+  // Ajoute un écouteur d'événements pour réagir au clic sur le containerModal
   if (e.target === containerModal) {
     // Vérifie si l'élément cliqué est le containerModal lui-même
     // Si c'est le cas, change le style de display à 'none' pour cacher la modale
@@ -62,8 +63,7 @@ async function displayGallery() {
   const gallery = await getWorks(); // Attend la récupération des œuvres (works) de manière asynchrone
   // Pour chaque œuvre dans la galerie
   gallery.forEach((works) => {
-    // Crée un élément 'figure'
-    const figure = document.createElement("figure");
+    const figure = document.createElement("figure"); // Crée un élément 'figure' pour contenir l'image et l'icône de suppression
     const img = document.createElement("img"); // Crée un élément 'img' pour l'image
     const span = document.createElement("span"); // Crée un élément 'span' pour contenir l'icône de suppression
     const trash = document.createElement("i"); // Crée un élément 'i' pour l'icône de suppression
@@ -86,11 +86,11 @@ prevImg();
 const deleteWorkID = {
   method: "DELETE", // Méthode HTTP utilisée pour la requête, ici DELETE pour supprimer une ressource
   headers: {
-    Authorization: `Bearer ${token}`, // En-tête d'autorisation contenant un token pour l'authentification
+    Authorization: `Bearer ${token}`, // ajoute un jeton d’authentification au format “Bearer” dans l'en-têtes de la requête
     "Content-Type": "application/json", // Type de contenu de la requête, ici JSON
   },
   mode: "cors", // Mode "cors" pour les requêtes entre différentes origines
-  credentials: "same-origin",  // Informations d'authentification à envoyer avec la requête, ici les cookies
+  credentials: "same-origin", // Informations d'authentification à envoyer avec la requête, ici les cookies
 };
 //suppression d'une photo dans la modale
 function deletePhoto() {
@@ -170,8 +170,6 @@ function prevImg() {
         // Met à jour la source de l'élément d'image pour la prévisualisation
         previewImage.src = e.target.result;
         previewImage.style.display = "block"; // Affiche l'élément d'image
-        // labelFile.style.display ="none"
-        // paragraphFile.style.display ="none"
       };
       // Commence la lecture du fichier comme une URL de données
       reader.readAsDataURL(file);

@@ -73,7 +73,7 @@ function createWork(work) {
   gallery.appendChild(figure);
 }
 
-//**********afiichage des boutons par catégories**************/
+//**********afiichage des boutons par catégories (filtres)**************/
 
 async function getWorks() {
   const requete = await fetch("http://localhost:5678/api/works");
@@ -182,8 +182,7 @@ function logoutUser() {
       logOut.textContent = "login";
       // Supprime les options d'administration
       window.sessionStorage.setItem("userId", "");
-      // Supprime les options d'administration
-      window.location.href = "index.html";
+      window.location.href = "index.html"; // Redirige l'utilisateur vers la page de connexion
     } else {
       //renvoi sur page conexion
       window.location.href = "login.html";
